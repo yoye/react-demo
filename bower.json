@@ -1,0 +1,14 @@
+{
+  "name": "skill",
+  "dependencies": {
+    "bootstrap": "~3.3.0"
+  },
+  "preen": {
+    "bootstrap": [
+      "fonts/*",
+      "less/*",
+      "less/mixins/*",
+      "dist/js/bootstrap.js"
+    ]
+  }
+}

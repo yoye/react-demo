@@ -1,0 +1,4 @@
+module.exports = {
+  BETASERIES_KEY: '',
+  BETASERIES_HOST: 'api.betaseries.com'
+};
