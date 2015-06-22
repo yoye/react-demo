@@ -1,4 +1,5 @@
 module.exports = {
+<<<<<<< HEAD
   BETASERIES_KEY: '',
   BETASERIES_HOST: 'api.betaseries.com'
 };
