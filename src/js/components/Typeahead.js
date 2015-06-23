@@ -7,10 +7,10 @@ var Typeahead = React.createClass({
     return {elements: []};
   },
   componentDidMount: function() {
-    ShowStore.addSearchedListener(this._onSearch);
+    Dispatcher.addSearchedListener(this._onSearch);
   },
   componentWillUnmount: function() {
-    ShowStore.removeSearchedListener(this._onSearch);
+    Dispatcher.removeSearchedListener(this._onSearch);
   },
   render: function() {
     if (this.state.elements.length === 0) {

@@ -44,7 +44,7 @@ var Betaseries = {
   },
   getShow: function(showId) {
     return new Promise(function(resolve, reject) {
-      var endpoint = Betaseries.getEndpoint('/shows/display', {id: show});
+      var endpoint = Betaseries.getEndpoint('/shows/display', {id: showId});
 
       https.get(endpoint, function(response) {
         var body = '';
@@ -55,27 +55,8 @@ var Betaseries = {
 
         response.on('end', function() {
           var show = JSON.parse(body).show;
-
+          
           resolve(show);
-        });
-      });
-    });
-  },
-  getEpisodes: function getEpisodes(show) {
-    return new Promise(function(resolve, reject) {
-      var endpoint = Betaseries.getEndpoint('/shows/episodes', {id: show});
-
-      https.get(endpoint, function(response) {
-        var body = '';
-
-        response.on('data', function(data) {
-          body += data;
-        });
-
-        response.on('end', function() {
-          var episodes = JSON.parse(body).episodes;
-
-          resolve(episodes);
         });
       });
     });

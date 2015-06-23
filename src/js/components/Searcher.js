@@ -9,10 +9,10 @@ var Searcher = React.createClass({
     return this._getStateShows();
   },
   componentDidMount: function() {
-    ShowStore.addLoadedListener(this._onLoaded);
+    Dispatcher.addLoadedListener(this._onLoaded);
   },
   componentWillUnmount: function() {
-    ShowStore.removeLoadedListener(this._onLoaded);
+    Dispatcher.removeLoadedListener(this._onLoaded);
   },
   render: function() {
     if (this.state.shows.length === 0) {
@@ -46,6 +46,7 @@ var Searcher = React.createClass({
 var SearchInput = React.createClass({
   componentDidMount: function() {
     Dispatcher.addShowSelectedListener(this._onShowSelected);
+    this.getDOMNode().focus();
   },
   componentWillUnmount: function() {
     Dispatcher.removeShowSelectedListener(this._onShowSelected);
